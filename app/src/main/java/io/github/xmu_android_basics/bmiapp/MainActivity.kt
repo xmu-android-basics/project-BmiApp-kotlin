@@ -57,8 +57,9 @@ class MainActivity : AppCompatActivity() {
 
     fun onHistoryClick(view: View) {
         // TODO Show BMI record history
+        val weightInput = weightWidget!!.text.toString()
 
-        startHistoryActivity();
+        startHistoryActivity(weightInput.toDouble(), bmi);
     }
 
     fun onShareClick(view: View) {
@@ -149,10 +150,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun startHistoryActivity() {
+    private fun startHistoryActivity(weight: Double, bmi: Double) {
         // TODO 实验2 打开 HistoryActivity.class
         val historyIntent = Intent(this, HistoryActivity::class.java)
-        historyIntent.putExtra(Intent.EXTRA_TEXT, bmiResult);
+        historyIntent.putExtra("BMI_DATE", whatDateIsToday());
+        historyIntent.putExtra("BMI_WEIGHT", weight);
+        historyIntent.putExtra("BMI_BMI", bmi);
 
         startActivity(historyIntent)
     }
