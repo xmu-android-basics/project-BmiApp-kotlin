@@ -13,7 +13,7 @@ class HistoryActivity : AppCompatActivity() {
 
     private var historyView: TextView? = null
 
-    var history: MutableList<String> = ArrayList()
+    val history: MutableList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
