@@ -1,13 +1,8 @@
 package io.github.xmu_android_basics.bmiapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.content.Intent
 import android.widget.TextView
-import androidx.core.app.NotificationCompat.getExtras
-
-
-
+import androidx.appcompat.app.AppCompatActivity
 
 class HistoryActivity : AppCompatActivity() {
     companion object {
@@ -17,6 +12,8 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     private var historyView: TextView? = null
+
+    var history: MutableList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +26,6 @@ class HistoryActivity : AppCompatActivity() {
         val weight = bundle.getDouble(BMI_WEIGHT, 0.0)
         val bmi = bundle.getDouble(BMI_BMI, 0.0)
 
-        historyView!!.text = "$bmiDate: ${weight}kg, BMI: $bmi"
+        history.add(bmiDate + ": " + weight + "kg, BMI: " + bmi);
     }
 }
