@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">BmiApp</string>
+    <string name="app_name">BMI App</string>
+    <string name="input_weight_hint">体重(公斤)</string>
+    <string name="input_height_hint">身高(米)</string>
+    <string name="button_compute">计算 BMI</string>
+    <string name="button_history">历史记录</string>
+    <string name="button_share">分享</string>
 </resources>
