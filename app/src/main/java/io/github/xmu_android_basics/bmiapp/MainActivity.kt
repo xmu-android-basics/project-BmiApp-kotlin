@@ -60,7 +60,15 @@ class MainActivity : AppCompatActivity() {
     fun onShareClick(view: View) {
 
         if (! bmiResult.isEmpty()) {
-            // TODO Share BMI things with...
+            // TODO 实验1.1
+//            sendText(bmiResult);
+
+            // TODO 实验1.2
+//            sendTextWithSubject(bmiResult);
+
+            // TODO 实验1.3
+//            sendTextAsMail(bmiResult);
+
         }
 
     }
@@ -78,5 +86,32 @@ class MainActivity : AppCompatActivity() {
 
     private fun generateResult(weight: Double?, bmi: Double?): String {
         return whatDateIsToday() + "，体重是：$weight，BMI 指数是：$bmi"
+    }
+
+    private fun sendText(text: String) {
+        // 实验1.1：使用隐式 Intent 发送文本
+        // 使用 ACTION_SEND
+        // 附加 EXTRA_TEXT
+        // 设置 Type 为 "text/plain"
+        // TODO 在下面写上你的代码
+
+    }
+
+    private fun sendTextWithSubject(text: String) {
+        // 实验1.2：使用隐式 Intent 发送带标题的文本
+        // 使用 ACTION_SEND
+        // 附加 EXTRA_SUBJECT 和 EXTRA_TEXT
+        // 设置 Type 为 "text/plain"
+        // TODO 在下面写上你的代码
+
+    }
+
+    private fun sendTextAsMail(text: String) {
+        // 实验1.3：使用隐式 Intent 发送邮件
+        // 使用 ACTION_SEND
+        // 附加 EXTRA_SUBJECT 和 EXTRA_TEXT
+        // 可选附加 EXTRA_MAIL, Intent.EXTRA_CC, Intent.EXTRA_BCC
+        // TODO 在下面写上你的代码
+
     }
 }
