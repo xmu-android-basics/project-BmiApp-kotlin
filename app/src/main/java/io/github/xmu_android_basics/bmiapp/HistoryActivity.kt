@@ -9,11 +9,10 @@ class HistoryActivity : AppCompatActivity() {
         const val BMI_DATE = "BMI_DATE"
         const val BMI_WEIGHT = "BMI_WEIGHT"
         const val BMI_BMI = "BMI_BMI"
+        val history: MutableList<String> = ArrayList()
     }
 
     private var historyView: TextView? = null
-
-    val history: MutableList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
