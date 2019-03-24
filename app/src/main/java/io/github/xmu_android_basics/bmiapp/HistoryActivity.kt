@@ -16,8 +16,10 @@ class HistoryActivity : AppCompatActivity() {
 
         historyView = findViewById(R.id.bmi_history)
 
-        val bmiRecord = intent.getStringExtra(Intent.EXTRA_TEXT)
+        val bmiDate = intent.getStringExtra("BMI_DATE")
+        val weight = intent.getDoubleExtra("BMI_WEIGHT", 0.0)
+        val bmi = intent.getDoubleExtra("BMI_BMI", 0.0)
 
-        historyView!!.text = bmiRecord
+         historyView!!.text = "$bmiDate: ${weight}kg, BMI: $bmi"
     }
 }
