@@ -9,8 +9,7 @@ import android.widget.Toast
 import java.text.SimpleDateFormat
 import java.util.*
 import android.content.Intent
-
-
+import android.net.Uri
 
 
 class MainActivity : AppCompatActivity() {
@@ -67,10 +66,10 @@ class MainActivity : AppCompatActivity() {
 //            sendText(bmiResult);
 
             // TODO 实验1.2
-            sendTextWithSubject(bmiResult);
+//            sendTextWithSubject(bmiResult);
 
             // TODO 实验1.3
-//            sendTextAsMail(bmiResult);
+            sendTextAsMail(bmiResult);
 
         }
 
@@ -133,7 +132,18 @@ class MainActivity : AppCompatActivity() {
         // 使用 ACTION_SEND
         // 附加 EXTRA_SUBJECT 和 EXTRA_TEXT
         // 可选附加 EXTRA_MAIL, Intent.EXTRA_CC, Intent.EXTRA_BCC
-        // TODO 在下面写上你的代码
+        //
+        val intent = Intent(Intent.ACTION_SENDTO)
+        intent.data = Uri.parse("mailto:")
+        intent.putExtra(Intent.EXTRA_SUBJECT, "BMI result of " + whatDateIsToday())
+        intent.putExtra(Intent.EXTRA_TEXT, text)
+
+        if (intent.resolveActivity(packageManager) != null) {
+            Toast.makeText(this, "start", Toast.LENGTH_SHORT).show()
+            startActivity(intent)
+        } else {
+            Toast.makeText(this, "没有应用支持这个 Intent", Toast.LENGTH_SHORT).show()
+        }
 
     }
 }
