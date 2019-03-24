@@ -151,6 +151,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun startHistoryActivity() {
         // TODO 实验2 打开 HistoryActivity.class
+        val historyIntent = Intent(this, HistoryActivity::class.java)
 
+        startActivity(historyIntent)
     }
 }
