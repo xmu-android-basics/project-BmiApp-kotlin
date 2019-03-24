@@ -57,6 +57,8 @@ class MainActivity : AppCompatActivity() {
 
     fun onHistoryClick(view: View) {
         // TODO Show BMI record history
+
+        startHistoryActivity();
     }
 
     fun onShareClick(view: View) {
@@ -144,6 +146,11 @@ class MainActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "没有应用支持这个 Intent", Toast.LENGTH_SHORT).show()
         }
+
+    }
+
+    private fun startHistoryActivity() {
+        // TODO 实验2 打开 HistoryActivity.class
 
     }
 }
