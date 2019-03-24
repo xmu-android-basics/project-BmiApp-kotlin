@@ -153,9 +153,11 @@ class MainActivity : AppCompatActivity() {
     private fun startHistoryActivity(weight: Double, bmi: Double) {
         // TODO 实验2 打开 HistoryActivity.class
         val historyIntent = Intent(this, HistoryActivity::class.java)
-        historyIntent.putExtra(HistoryActivity.BMI_DATE, whatDateIsToday());
-        historyIntent.putExtra(HistoryActivity.BMI_WEIGHT, weight);
-        historyIntent.putExtra(HistoryActivity.BMI_BMI, bmi);
+        val bundle = Bundle()
+        bundle.putString(HistoryActivity.BMI_DATE, whatDateIsToday())
+        bundle.putDouble(HistoryActivity.BMI_WEIGHT, weight)
+        bundle.putDouble(HistoryActivity.BMI_BMI, bmi)
+        historyIntent.putExtras(bundle)
 
         startActivity(historyIntent)
     }

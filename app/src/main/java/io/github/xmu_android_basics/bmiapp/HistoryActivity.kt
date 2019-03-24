@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.widget.TextView
+import androidx.core.app.NotificationCompat.getExtras
+
+
 
 
 class HistoryActivity : AppCompatActivity() {
@@ -21,9 +24,10 @@ class HistoryActivity : AppCompatActivity() {
 
         historyView = findViewById(R.id.bmi_history)
 
-        val bmiDate = intent.getStringExtra(Companion.BMI_DATE)
-        val weight = intent.getDoubleExtra(Companion.BMI_WEIGHT, 0.0)
-        val bmi = intent.getDoubleExtra(Companion.BMI_BMI, 0.0)
+        val bundle = intent.extras
+        val bmiDate = bundle.getString(BMI_DATE)
+        val weight = bundle.getDouble(BMI_WEIGHT, 0.0)
+        val bmi = bundle.getDouble(BMI_BMI, 0.0)
 
         historyView!!.text = "$bmiDate: ${weight}kg, BMI: $bmi"
     }
