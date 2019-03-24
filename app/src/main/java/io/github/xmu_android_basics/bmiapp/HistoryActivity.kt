@@ -27,5 +27,17 @@ class HistoryActivity : AppCompatActivity() {
         val bmi = bundle.getDouble(BMI_BMI, 0.0)
 
         history.add(bmiDate + ": " + weight + "kg, BMI: " + bmi);
+
+        renderHistory()
+    }
+
+    private fun renderHistory() {
+        val buffer = StringBuffer();
+
+        for (bmiRecord in history) {
+            buffer.insert(0, bmiRecord + "\n");
+        }
+
+        historyView!!.text = buffer
     }
 }
