@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onShareClick(view: View) {
 
-        if (! bmiResult.isEmpty()) {
+        if (!bmiResult.isEmpty()) {
             // TODO 实验1.1
 //            sendText(bmiResult);
 
@@ -152,6 +152,7 @@ class MainActivity : AppCompatActivity() {
     private fun startHistoryActivity() {
         // TODO 实验2 打开 HistoryActivity.class
         val historyIntent = Intent(this, HistoryActivity::class.java)
+        historyIntent.putExtra(Intent.EXTRA_TEXT, bmiResult);
 
         startActivity(historyIntent)
     }
